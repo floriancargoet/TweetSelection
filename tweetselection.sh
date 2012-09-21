@@ -5,6 +5,7 @@
 # select something, hit your shortcut, confirm and it's done!
 
 content=$(xclip -o)
+# if you are on KDE, use 'kdialog' instead of 'zenity'
 if zenity --question --text "Tweet this: \n\"$content\"" ; then
     t update "$content"
 fi
